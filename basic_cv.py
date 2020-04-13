@@ -9,12 +9,21 @@ import cv2
 import imutils
 
 #reading image
-image = cv2.imread("jp.jpg")
+path="E:\pyimageSearch\dog.jpg"
+image = cv2.imread(path)
 #dimesions
 (h,w,d)=image.shape
 #displaying image
 cv2.imshow("Image", image)
 cv2.waitKey(0)
+
+
+#using values of keys 
+k=cv2.waitkey(0)
+if k==27:
+    cv2.destroyAllWindows()
+elif k==ord('s'):
+    cv2.imwrite("dcopy.jpg",image)
 # access the RGB pixel located at x=50, y=100, keepind in mind that
 # OpenCV stores images in BGR order rather than RGB
 (B, G, R) = image[100, 50]
